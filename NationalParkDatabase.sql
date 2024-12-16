@@ -272,3 +272,12 @@ GROUP BY
 	np.national_park_id
 HAVING
     np.environment = 'Desert';
+    
+-- Query #5
+SELECT
+	np.name, animal.species, animal.population
+FROM
+	animal
+	LEFT JOIN national_park AS np USING (national_park_id)
+WHERE
+	Population BETWEEN 1000 AND 5000;
